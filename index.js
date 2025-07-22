@@ -4,7 +4,6 @@ import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
 
-// .env dosyasını yükle
 dotenv.config();
 
 const client = new Client({
@@ -17,10 +16,7 @@ const client = new Client({
   ],
   partials: [Partials.Channel]
 });
-
 client.commands = new Collection();
-
-// Komutları yükle
 const commandsPath = path.join(process.cwd(), 'src', 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
@@ -30,11 +26,9 @@ for (const file of commandFiles) {
     client.commands.set(command.default.data.name, command.default);
   }
 }
-
 client.once('ready', () => {
   console.log(chalk.green(`[BienBot] Giriş yapıldı: ${client.user.tag}`));
 });
-
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
   const command = client.commands.get(interaction.commandName);
