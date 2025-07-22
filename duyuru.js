@@ -43,7 +43,7 @@ export default {
       }
     }
 
-    // Log kanalı
+    // Log kanalı buraya id'yi girmeyin env. oluşturup ona girin
     const logChannel = guild.channels.cache.get(process.env.LOG_CHANNEL_ID);
     if (logChannel) {
       logChannel.send(`Duyuru tamamlandı. Başarılı: ${basarili}, Hatalı: ${hata}, Komut: ${interaction.user.tag}`);
