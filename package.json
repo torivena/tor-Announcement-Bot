@@ -1,7 +1,7 @@
 {
   "name": "bien-bot",
   "version": "1.0.0",
-  "description": "Duyuru gönderen gelişmiş Discord botu.",
+  "description": "Bota Benziyor",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
