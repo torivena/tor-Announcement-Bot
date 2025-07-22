@@ -19,7 +19,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
 (async () => {
   try {
-    console.log('Slash komutları yükleniyor...');
+    console.log('Slash komutları yükleniyor');
     await rest.put(
       Routes.applicationGuildCommands(
         (await rest.get(Routes.user())).id,
